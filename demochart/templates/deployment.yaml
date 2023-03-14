@@ -1,0 +1,30 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+  name: argo-deployment-pod
+spec: 
+  selector: 
+    matchLabels: 
+      app: myapp 
+  replicas: 1 
+  template: 
+    metadata: 
+      labels: 
+        app: myapp 
+    spec: 
+      containers: 
+      - name: argo-cont 
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }} 
+        ports:
+          - containerPort: {{ .Values.service.targetport }}
+        readinessProbe:
+          periodSeconds: 25
+          initialDelaySeconds: 20
+          tcpSocket:
+            port: {{ .Values.service.targetport }} 
+        livenessProbe:
+          periodSeconds: 25
+          initialDelaySeconds: 10
+          tcpSocket:
+            port: {{ .Values.service.targetport }} 
