@@ -8,15 +8,6 @@ image:
   pullPolicy: IfNotPresent
   tag: 9df1a8947d084b1e0ced164d6b6e0f34cc7d3dbe
 
-  #new:
-  # image: myimg
-  # pullPolicy: Never
-  # tag: d0b4a43a1180
-
-  #new2:  
-  # image2: teaimg
-  # pullPolicy: Never
-  # tag: d0b4a43a1189
 
 app: node
 tea: node
