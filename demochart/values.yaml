@@ -6,7 +6,7 @@ version: v1
 image:
   repository: 281600030161.dkr.ecr.us-east-1.amazonaws.com/argocd-test
   pullPolicy: IfNotPresent
-  tag: 239252abd086b6ed1c1bad69e3d7aa7e67747bbf
+  tag: ae3240c29557f3eaf5f67c69657435ee9203c9f3
 
 
 app: node
