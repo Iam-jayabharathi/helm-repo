@@ -13,14 +13,14 @@ spec:
         app: myapp 
     spec: 
       containers: 
-      - name: argo-cont 
+      - name: mycicdcontainer
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }} 
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: {{ .Values.service.targetport }}
         readinessProbe:
           periodSeconds: 25
-          initialDelaySeconds: 20
+          initialDelaySeconds: 10
           tcpSocket:
             port: {{ .Values.service.targetport }} 
         livenessProbe:

@@ -8,10 +8,6 @@ image:
   pullPolicy: IfNotPresent
   tag: 3082004bfb7f41624cdae3954b84c85037c9e133
 
-
-app: node
-tea: node
-
 strategyType: RollingUpdate
 maxSurge: 1
 maxUnavailable: 0
