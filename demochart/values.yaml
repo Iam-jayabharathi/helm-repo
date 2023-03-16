@@ -5,13 +5,8 @@ version: v1
 
 image:
   repository: 281600030161.dkr.ecr.us-east-1.amazonaws.com/argocd-test
-<<<<<<< HEAD
-  pullPolicy: Never
-  tag: f6cec58a33a1e3edb1127710d5fa3cda3a2cd164
-=======
   pullPolicy: IfNotPresent
   tag: 846ce05195065bb8fe401c669dee788d9495fd00
->>>>>>> 5f78d85e1cad1ad4070b85fd98035c840a876182
 
 strategyType: RollingUpdate
 maxSurge: 1
