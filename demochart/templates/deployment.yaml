@@ -28,11 +28,4 @@ spec:
           initialDelaySeconds: 10
           tcpSocket:
             port: {{ .Values.service.targetport }}
-        volumeMounts:
-        - name: aws-credentials
-          mountPath: /root/.aws
-      volumes:
-      - name: aws-credentials
-        secret:
-          secretName: aws-credentials
 
