@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: mycicdcontainer
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: 281600030161.dkr.ecr.us-east-1.amazonaws.com/argocd-test:f6cec58a33a1e3edb1127710d5fa3cda3a2cd164
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: {{ .Values.service.targetport }}
@@ -27,4 +27,12 @@ spec:
           periodSeconds: 25
           initialDelaySeconds: 10
           tcpSocket:
-            port: {{ .Values.service.targetport }} 
+            port: {{ .Values.service.targetport }}
+        volumeMounts:
+        - name: aws-credentials
+          mountPath: /root/.aws
+      volumes:
+      - name: aws-credentials
+        secret:
+          secretName: aws-credentials
+
