@@ -5,7 +5,12 @@ metadata:
 spec: 
   selector: 
     matchLabels: 
-      app: myapp 
+      app: myapp
+  strategy:
+    type: {{ .Values.strategyType }}
+    rollingUpdate:
+      maxSurge: {{ .Values.maxSurge }}
+      maxUnavailable: {{ .Values.maxUnavailable }}
   replicas: 1 
   template: 
     metadata: 
