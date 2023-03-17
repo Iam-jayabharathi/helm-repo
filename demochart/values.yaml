@@ -16,6 +16,14 @@ service:
   port: 80
   targetport: 3000
 
+resources:
+  requests:
+    memory: 40Mi
+    cpu: 30m
+  limits:
+    memory: 80Mi
+    cpu: 70m
+
 restartPolicy: Always
 secretname: aximdemosecret-tls
 hostname: noc.aximsoft.com
